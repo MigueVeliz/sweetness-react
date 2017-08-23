@@ -1,0 +1,20 @@
+
+.nav-bar {
+  width: 100vw;
+  height: 10vh;
+  background-color: crimson;
+}
+
+.main-container {
+  width: 70vw;
+  height: 100vh;
+  background-color: gray;
+  display: inline-block;
+}
+
+.sidebar {
+  width: 30vw;
+  height: 100vh;
+  background-color: tomato;
+  display: inline-block;
+}

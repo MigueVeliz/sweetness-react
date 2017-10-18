@@ -12,7 +12,7 @@ class Sidebar extends Component {
 						onClick = { () => { this.props.getCurrentProduct(product) } }
 				>
 					<ul>
-						<li> <img className = "image" src = { product.image } /> </li>
+						<li> <img className = "image" src = { product.image } alt="hahaha" /> </li>
 						<li> { product.name } </li>
 						<li> ${ product.price } </li>
 					</ul>

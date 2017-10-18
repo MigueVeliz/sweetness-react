@@ -1,4 +1,4 @@
-html, body {
+html, body, p {
   padding: 0;
   margin: 0;
 }
@@ -12,6 +12,31 @@ html, body {
   background-color: #F4BBD3;
 }
 
+.shopping-cart {
+  height: 100%;
+  font-size: 13px;
+  padding: 0px 30px;
+  color: white;
+  float: right;
+  background-color: tomato;
+}
+
+.check-out {
+  background-color: indigo;
+  padding: 2px 5px;
+  margin-top: 4px;
+}
+
+
+/**************************************
+*************** CHECKOUT ****************
+***************************************/
+
+.checkout-section {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+}
 
 /**************************************
 *************** SIDEBAR ****************
@@ -74,14 +99,29 @@ html, body {
   width: 350px;
   margin: 0 auto;
 
+}
 
+.login {
+  width: 80vw;
+  height: 200px;
+  background-color: gray;
+  color: white;
 }
 
 
+/**************************************
+************ Main Container ***********
+***************************************/
 
-
-
-
+.footer {
+  width: 100vw;
+  height: 100px;
+  background-color: tomato;
+  /*position: absolute;*/
+  display: inline-block;
+  /*bottom: 1;*/
+  margin-top: 650px;
+}
 
 
 

@@ -9,16 +9,20 @@ html, body, p {
 .nav-bar {
   width: 100vw;
   height: 8vh;
-  background-color: #F4BBD3;
+  background-color: #FF0876;
 }
 
 .shopping-cart {
   height: 100%;
-  font-size: 13px;
-  padding: 0px 30px;
+  font-size: 10px;
+  position: absolute;
+  padding: 8px 30px 0px 30px;
+  /*margin-top: 5px;*/
   color: white;
-  float: right;
-  background-color: tomato;
+  right: 0;
+  /*float: right;*/
+  text-align: center;
+  /*background-color: tomato;*/
 }
 
 .check-out {
@@ -35,33 +39,263 @@ html, body, p {
 .checkout-section {
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: #FEF7E5;
 }
+
+.items-to-be-bought {
+  width: 88vw;
+  margin: 0 auto;
+  background-color: #FF6B6B;
+  color: white;
+  padding: 10px 5px;
+  margin: 0 auto;
+  margin-top: 8px;
+  font-size: 22px;
+  line-height: 33px;
+}
+
+.items-to-be-bought ul{
+  width: 44vw;
+  display: inline-block;
+  list-style: none;
+}
+
+.times-span {
+  font-size: 20px;
+  margin-top: -7px;
+}
+
+.image-checking-out {
+  width: 25%;
+  display: inline-block;
+  position: absolute;
+  margin-top: 5%;
+  margin-left: -12px;
+}
+
+.current-items {
+  width: 100vw;
+  margin: 0 auto;
+  background-color: #011627;
+  padding: 12px 4px;
+}
+
+.payment-section {
+  width: 100vw;
+  margin: 0 auto;
+  /*margin-top: 10px;*/
+  background-color: #011627;
+  padding: 12px 4px;
+
+}
+
+.remove-item {
+  /*position: absolute;*/
+  /*display: block;*/
+  float: right;
+  /*top: 0;*/
+  margin-top: -14px;
+  margin-right: -5px;
+}
+
+.remove-item button {
+  padding: 6px 8px;
+  border: none;
+  background-color: red;
+  color: white;
+  font-size: 14px;
+
+}
+
+
+/**************************************
+************ Costumer Form ***********
+***************************************/
+@import url(https://fonts.googleapis.com/css?family=Lato:100,300,400);
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder {
+  color: #bbb5af;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder {
+  color: #bbb5af;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::placeholder, textarea::focus:placeholder {
+  color: #bbb5af;
+}
+
+input::-ms-placeholder, textarea::-ms-placeholder {
+  color: #aca49c;
+  font-size: 0.875em;
+}
+
+input:focus::-ms-placeholder, textarea:focus::-ms-placeholder {
+  color: #bbb5af;
+}
+
+/* on hover placeholder */
+
+input:hover::-webkit-input-placeholder, textarea:hover::-webkit-input-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::-webkit-input-placeholder, textarea:hover:focus::-webkit-input-placeholder {
+  color: #cbc6c1;
+}
+
+input:hover::-moz-placeholder, textarea:hover::-moz-placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::-moz-placeholder, textarea:hover:focus::-moz-placeholder {
+  color: #cbc6c1;
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::placeholder, textarea:hover:focus::placeholder {
+  color: #cbc6c1;
+}
+
+input:hover::placeholder, textarea:hover::placeholder {
+  color: #e2dedb;
+  font-size: 0.875em;
+}
+
+input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
+  color: #cbc6c1;
+}
+
+
+
+#form {
+  position: relative;
+  /*width: 20vw;*/
+  margin: 50px auto 100px auto;
+}
+
+input {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  width: 90vw;
+  height: 50px;
+  padding: 0px 0px 0px 15px;
+  
+  background: transparent;
+  outline: none;
+  color: #726659;
+  
+  border: solid 1px #b3aca7;
+  border-bottom: none;
+  
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+input:hover {
+  background: #011627;
+  color: #e2dedb;
+}
+
+textarea {
+  width: 86vw;
+  /*max-width: 470px;*/
+  height: 110px;
+  max-height: 110px;
+  padding: 15px;
+  
+  background: transparent;
+  outline: none;
+  
+  color: #726659;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  
+  border: solid 1px #b3aca7;
+  
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+}
+
+textarea:hover {
+  background: #b3aca7;
+  color: #e2dedb;
+}
+
+#submit {
+  width: 94vw;
+  
+  padding: 0;
+  margin: -5px 0px 0px 0px;
+  
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: #b3aca7;
+  
+  outline:none;
+  cursor: pointer;
+  
+  border: solid 1px #b3aca7;
+  border-top: none;
+}
+
+#submit:hover {
+  color: #e2dedb;
+}
+
+
 
 /**************************************
 *************** SIDEBAR ****************
 ***************************************/
 
 .sidebar {
-  width: 15vw;
-  height: 100vh;
-  background-color: #F1E4F3;
-  display: inline-block;
-  position: absolute;
+  width: 100vw;
+  /*height: 100vh;*/
+  background-color: #DFDAF5;
+  /*display: inline-block;*/
+  /*position: absolute;*/
   /*margin: 0;*/
-  overflow: auto;
+  /*overflow: auto;*/
+  padding: 35px 0px;
 }
 
 .single-product {
-  width: 80%;
-  background-color: white;
-  font-size: 14px;
+  width: 40%;
+  background-color: #FCFFFC;
   margin: 0 auto;
   margin-top: 6px;
-  /*display: inline-block;*/
-  /*position: static;*/
-  padding: 4px;
+  display: inline-block;
+  margin: 20px 3% 0 3%;
+  border: solid white 4px;
+  /*padding-bottom: 30px;*/
 }
+
 .single-product ul {
   list-style: none;
   padding: 0;
@@ -70,20 +304,29 @@ html, body, p {
 
 .image {
   width: 100%;
-  height: 100%;
+  /*height: 100%;*/
+  padding-bottom: 0px;
 }
 
+.add-to-cart-button {
+  width: 100%;
+  font-size: 15px;
+  background-color: #357DED;
+  color: white;
+  border: none;
+}
 /**************************************
 ************ Main Container ***********
 ***************************************/
 
 .main-container {
-  width: 85vw;
-  height: 100vh;
-  background-color: #F7ECE1;
+  width: 100vw;
+  /*height: 100vh;*/
+  background-color: #FEF7E5;
   display: inline-block;
-  position: absolute;
-  right: 0;
+  /*position: absolute;*/
+  /*right: 0;*/
+  padding-bottom: 20px;
 }
 
 .current-product-container {
@@ -96,7 +339,7 @@ html, body, p {
 }
 
 .current-product-container img {
-  width: 350px;
+  width: 90%;
   margin: 0 auto;
 
 }
@@ -115,12 +358,14 @@ html, body, p {
 
 .footer {
   width: 100vw;
-  height: 100px;
-  background-color: tomato;
-  /*position: absolute;*/
-  display: inline-block;
+  /*height: 100px;*/
+  background-color: #1B2845;
+  /*display: inline-block;*/
+  color: #FCFFFC;
+  text-align: center;
+  padding: 50px 0px;
   /*bottom: 1;*/
-  margin-top: 650px;
+  /*margin-top: 650px;*/
 }
 
 

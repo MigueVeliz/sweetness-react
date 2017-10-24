@@ -17,7 +17,7 @@ class MainContainer extends Component {
 			<div className = "current-product-container">
 				<img src = { product.image } alt=""/>
 				<p> { product.name }</p>
-				<button onClick={ () => { this.props.addItemToCart(product.id) } }>Add to cart</button>
+				<button onClick={ () => { this.props.addItemToCart(product) } }>Add to cart</button>
 				<p> ${ product.price }</p>
 				<p> { product.description }</p>
 				<p> Product ID: { product.id }</p>

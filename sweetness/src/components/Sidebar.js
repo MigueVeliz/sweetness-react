@@ -16,6 +16,7 @@ class Sidebar extends Component {
 						<li> { product.name } </li>
 						<li> ${ product.price } </li>
 					</ul>
+					<button className="add-to-cart-button">Add to Cart</button>
 				</div>
 			)
 		})

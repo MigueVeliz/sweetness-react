@@ -63,6 +63,21 @@ class App extends Component {
 
 	}
 
+	// Remoe item from cart
+	removeItem(id) {
+		let currentItemsInCart = this.state.shoppingCartItems;
+
+		let newItemsInCart = currentItemsInCart.filter( item => {
+			return item.id !== id ? item: "";
+		});
+
+		// console.log("New Items: " + newItemsInCart);
+
+		this.setState({
+			shoppingCartItems: newItemsInCart
+		})
+	}
+
 	getMode(mode) {
 		this.setState({
 			mode: mode
@@ -103,6 +118,7 @@ class App extends Component {
 						<CheckOut
 							getMode = { this.getMode.bind(this) }
 							shoppingCartItems = { this.state.shoppingCartItems }
+							removeItem = { this.removeItem.bind(this) }
 			 			/>
 
 					</div>

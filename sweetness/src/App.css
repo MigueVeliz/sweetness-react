@@ -35,23 +35,39 @@ html, body, p {
 /**************************************
 *************** CHECKOUT ****************
 ***************************************/
+.back-to-shopping {
+  width: 100vw;
+  text-align: center;
+  padding: 7px 1px;
+  background-color: #FF0876;
+  color: white;
+  border: none;
+}
+
+.back-to-shopping:hover {
+  background-color: #EF27A6;
+}
 
 .checkout-section {
   width: 100vw;
   height: 100vh;
-  background-color: #FEF7E5;
+  background-color: #011627;
+
 }
 
 .items-to-be-bought {
   width: 88vw;
-  margin: 0 auto;
-  background-color: #FF6B6B;
-  color: white;
+  background-color: #E1FAF9;
+  color: #011627;
   padding: 10px 5px;
   margin: 0 auto;
   margin-top: 8px;
   font-size: 22px;
   line-height: 33px;
+}
+
+.items-to-be-bought:hover {
+  background-color: #BFEDC1;
 }
 
 .items-to-be-bought ul{
@@ -107,6 +123,20 @@ html, body, p {
 
 }
 
+.place-order-button {
+  width: 91vw;
+  padding: 7px 1px;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  background-color: #F7EE7F;
+  color: indigo;
+  font-size: 14px;
+}
+
+.place-order-button:hover {
+  background-color: #F4D35E;
+}
 
 /**************************************
 ************ Costumer Form ***********
@@ -344,6 +374,23 @@ textarea:hover {
 
 }
 
+.current-product-container button {
+  width: 90%;
+  font-size: 15px;
+  background-color: #357DED;
+  color: white;
+  border: none;
+  padding: 5px 0px;
+
+
+}
+
+.current-product-info {
+  padding: 4px 20px;
+  line-height: 24px;
+  font-family: 'Lato', sans-serif;
+}
+
 .login {
   width: 80vw;
   height: 200px;
@@ -353,7 +400,7 @@ textarea:hover {
 
 
 /**************************************
-************ Main Container ***********
+************ F o o t e r ***********
 ***************************************/
 
 .footer {
@@ -367,6 +414,10 @@ textarea:hover {
   /*bottom: 1;*/
   /*margin-top: 650px;*/
 }
+
+
+
+
 
 
 

@@ -11,20 +11,31 @@ class MainContainer extends Component {
 
 	showCurrentProduct() {
 
-		let product = this.props.currentProduct
+		//let product = this.props.currentProduct
 
 		return(
 			<div className = "current-product-container">
-				<img src = { product.image } alt=""/>
-				<button onClick={ () => { this.props.addItemToCart(product) } }>Add to cart</button>
+				{/*<img src = { product.image } alt=""/>*/}
+				
+{/*				<button onClick={ () => { this.props.addItemToCart(product) } }>Add to cart</button>
 
 				<div className="current-product-info">
 					<p> { product.name }</p>
 					<p> ${ product.price }</p>
 					<p> { product.description }</p>
 					<p> <i>Product ID: { product.id } </i></p>
-				</div>
+				</div>*/}
 
+			</div>
+		)
+	}
+
+	show3OnSaleItems() {
+		return (
+			<div className="onSaleItems">
+				<div className="onSaleItem1"></div>
+				<div className="onSaleItem2"></div>
+				<div className="onSaleItem3"></div>
 			</div>
 		)
 	}
@@ -33,6 +44,7 @@ class MainContainer extends Component {
 		return (
 			<div className = "main-container">
 				{ this.showCurrentProduct() }
+				{ this.show3OnSaleItems() }
 			</div>
 		)
 	}

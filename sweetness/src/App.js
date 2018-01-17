@@ -6,6 +6,7 @@ import Sidebar from './components/Sidebar';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
 import CheckOut from './components/CheckOut';
+import LogIn from './components/LogIn';
 
 class App extends Component {
 
@@ -55,7 +56,6 @@ class App extends Component {
 		console.log("Item ID: " + item );
 
 		this.setState({
-			//shoppingCartItems: this.state.shoppingCartItems.concat([item])
 			 shoppingCartItems: [...this.state.shoppingCartItems, item]
 		});
 
@@ -87,7 +87,7 @@ class App extends Component {
 	storeMode() {
 		let mode = this.state.mode;
 
-		console.log("mode: " + mode)
+		console.log("---mode---: " + mode)
 
 		if(mode === "buying") {
 			return (
@@ -123,6 +123,15 @@ class App extends Component {
 
 					</div>
 			 )
+		} else if(mode === "login") {
+			return (
+				<div>
+					<LogIn 
+						getMode = { this.getMode.bind(this) }
+
+					/>
+				</div>
+			);
 		}
 	}
 
@@ -131,10 +140,7 @@ class App extends Component {
     return (
       <div>
       	{ this.storeMode() }
-
-
       </div>
-
 
     );
   }

@@ -6,21 +6,36 @@ html, body, p {
 /**************************************
 *************** Nav Bar ****************
 ***************************************/
+
 .nav-bar {
   width: 100vw;
-  height: 5vh;
-  background-color: #FF0876;
+  height: 7vh;
+  background-color: #1B2845;
+}
+
+.login-button {
+  color: white;
+  font-size: 13px;
+  background-color: #BF1363;
+  display: inline-block;
+  padding: 8px 9px;
+}
+
+.login-button:hover {
+  background-color: black;
+  cursor: pointer;
 }
 
 .shopping-cart {
   /*height: inherit;*/
   font-size: 10px;
-  position: absolute;
+  /*position: absolute;*/
+  display: inline-block;
   padding: 7px 15px 8px 10px;
   /*margin-top: 5px;*/
   color: white;
-  right: 0;
-  /*float: right;*/
+  /*right: 0;*/
+  float: right;
   text-align: center;
   /*background-color: tomato;*/
 }
@@ -147,6 +162,22 @@ html, body, p {
 .place-order-button:hover {
   background-color: #F4D35E;
 }
+
+.total {
+  width: 88vw;
+  margin: 0 auto;
+  background-color: #68EDC6;
+  padding: 12px 4px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.total h3 {
+  text-align: center;
+  font-size: 24px;
+  color: #28464B;
+}
+
 
 /**************************************
 ************ Costumer Form ***********
@@ -315,25 +346,25 @@ textarea:hover {
 ***************************************/
 
 .sidebar {
-  /*width: 100px;*/
-  height: 20vh;
-  background-color: #DFDAF5;
-  /*display: inline-block;*/
+  /*width: 100vw;*/
+  /*height: 20vh;*/
+  background-color: #FFF;
+  display: inline-block;
   /*position: absolute;*/
-  /*margin: 0;*/
-  overflow-x: scroll;
-  padding: 2px 0px;
-  white-space: nowrap;
+  /*margin: 0 auto;*/
+  text-align: center;
+  padding: 40px 3%;
+  /*white-space: nowrap;*/
 }
 
 .single-product {
-  width: 20%;
-  background-color: #FCFFFC;
-  /*margin: 0 auto;*/
-  margin-top: 6px;
+  width: 15%;
+  background-color: white;
+  margin: 0 auto;
+  /*margin-top: 6px;*/
   display: inline-block;
-  margin: 4px 1% 0 1%;
-  border: solid white 4px;
+  margin: 40px 2% 0 2%;
+  border: solid #00BFFF 1px;
   /*padding-bottom: 30px;*/
 }
 
@@ -341,7 +372,7 @@ textarea:hover {
   list-style: none;
   padding: 0;
   margin: 0;
-  font-size: 12px;
+  font-size: 20px;
 }
 
 .image {
@@ -363,29 +394,58 @@ textarea:hover {
 
 .main-container {
   width: 100vw;
-  height: 70vh;
-  background-color: #FEF7E5;
+  /*height: 70vh;*/
+  background-color: #F5F5F5;
   display: inline-block;
   /*position: absolute;*/
   /*right: 0;*/
-  padding-bottom: 20px;
+  padding: 50px 0;
 }
 
 .current-product-container {
-  width: 100%;
-  height: 80%;
-  /*background-color: tomato;*/
+  width: 75vw;
+  height: 45vh;
+  background-color: #FFE4E1;
   margin: 0 auto;
-  margin-top: 15px;
+  /*margin-top: 50px;*/
+  /*margin-bottom: 70px;*/
   text-align: center;
 }
 
-.current-product-container img {
-  width: 70%;
-  height: 70%;
+.onSaleItems {
+  width: 75vw;
+  height: 22vh;
+  background-color: #FFF;
+  margin: 0 auto;
+}
+
+.onSaleItem1 {
+  width: 25vw;
+  height: 100%;
+  background-color: #DBFE87;
+  display: inline-block;
+}
+
+.onSaleItem2 {
+  width: 25vw;
+  height: 100%;
+  background-color: #6F8695;
+  display: inline-block;
+}
+
+.onSaleItem3 {
+  width: 25vw;
+  height: 100%;
+  background-color: #0C1B33;
+  display: inline-block;
+}
+
+/*.current-product-container img {
+  width: 100%;
+  height: 20%;
   margin: 0 auto;
 
-}
+}*/
 
 .current-product-container button {
   width: 70%;
@@ -429,7 +489,89 @@ textarea:hover {
 }
 
 
+.login {
+  width: 100vw;
+  height: 100vh;
+  background-color: #011627;
 
+}
+
+
+/**************************************
+***************************************
+***************************************
+***************************************
+************ MEDIA QUERIES***********
+***************************************
+***************************************
+***************************************
+***************************************/
+
+
+@media screen and (max-width: 1080px) {
+  body {
+      background-color: lightgreen;
+  }
+
+  /**************************************
+  ************ Main Container ***********
+  ***************************************/
+
+  .current-product-container {
+    width: 80vw;
+    height: 30vh;
+  }
+
+  /**************************************
+  *************** SIDEBAR ****************
+  ***************************************/
+  .single-product {
+    width: 25%;
+  }
+
+
+}
+
+
+@media screen and (max-width: 480px) {
+  body {
+      background-color: red;
+  }
+
+    /**************************************
+  ************ Main Container ***********
+  ***************************************/
+
+  .current-product-container {
+    width: 100vw;
+    height: 30vh;
+
+  }
+
+  .onSaleItems {
+    width: 100vw;
+    height: 100%;
+    text-align: center;
+    background-color: purple;
+
+    /*margin: 0 auto;*/
+  }
+
+  .onSaleItem1, .onSaleItem2, .onSaleItem3 {
+    width: 90vw;
+    height: 22vh;
+    /*display: inline-block;*/
+  }
+
+  /**************************************
+  *************** SIDEBAR ****************
+  ***************************************/
+  .single-product {
+    width: 45%;
+  }
+
+
+}
 
 
 

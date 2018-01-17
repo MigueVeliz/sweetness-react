@@ -1,4 +1,9 @@
-constructor() {
+import React, { Component } from 'react';
+import firebase from "../fire";
+
+class LogIn extends Component {
+
+	constructor() {
 		super()
 
 		this.state = {
@@ -8,15 +13,17 @@ constructor() {
 	}
 
 
-handleSubmit(e) {
+	handleSubmit(e) {
 		e.preventDefault();
-		console.log("Registering a new user: " + this.state.email)
+		//console.log("Registering a new user: " + this.state.email)
 
 		const { email, password } = this.state;
 
-		firebase.auth().createUserWithEmailAndPassword(email, password)
+		firebase.auth().signInWithEmailAndPassword(email, password)
 			.then( response => {
-				console.log("New user has been registered!");
+				console.log("User has been Logged in!");
+
+				this.props.getMode("buying")
 			})
 			.catch( function(error) {
 				console.log("Error: " + error);
@@ -35,8 +42,12 @@ handleSubmit(e) {
 
 	}
 
+	render() {
+		return (
+			<div className="login">
 
-	<div className="login">
+				<button className="back-to-shopping" onClick={ () => { this.props.getMode("buying") }} >Back to shopping</button>
+
 				<form onSubmit={ this.handleSubmit.bind(this) }>
 					<p>Email</p>
 					<input 
@@ -55,5 +66,17 @@ handleSubmit(e) {
 					/>
 
 					<button>Register </button>
-      			</form>
-      		</div>
+					</form>
+		      </div>
+		);
+	}
+}
+
+export default LogIn;
+
+
+
+
+
+
+

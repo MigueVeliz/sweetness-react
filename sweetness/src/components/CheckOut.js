@@ -11,31 +11,45 @@ class CheckOut extends Component {
 		}
 	}
 
+	// Checks if the item clicked is already
+	// in the parsedItems array, if it is then
+	// it returns tru, if it's not then it
+	// returns false
 	alreadyAdded(itemId) {
-		let parsedItems = this.state.parsedItems;
+		const parsedItems = this.state.parsedItems;
+
+		console.log("parsedItems.length:" + parsedItems.length);
 
 		for (let i = 0; i < parsedItems.length; i++) {
+			console.log("checking if item is already added");
 			if(parsedItems[i].id === itemId) {
+				console.log("alreadyAdded returnning True");
 				return true;
 			}
 		}
 
+		console.log("alreadyAdded returnning False")
 		return false;
 
 	}
 
+	// Checks if there is an obj with the same ID
+	// as the itemId pass, if there is then it 
+	// increases its quantity by 1
 	increateItemQuantity(itemId) {
 		let parsedItems = this.state.parsedItems;
 
-		for (let i = 0; i < parsedItems.length; i++) {
-			if(parsedItems[i].id === itemId) {
-				parsedItems[i].quantity += 1;
+		parsedItems.forEach( item => {
+			if(item.id === itemId) {
+				item.quantity++;
 			}
-		}
+			
+			//item.id === itemId ? item.quantity++ : ""
+		})
 
-/*		this.setState({
+		this.setState({
 			parsedItems: parsedItems
-		});*/
+		});
 
 	}
 
@@ -53,44 +67,71 @@ class CheckOut extends Component {
 			parsedItems: newItemsInCart
 		})
 
+		// removes the product from the shopping cart
+		// array in the app.js state
 		this.props.removeItem(id);
 	}
 
-	parseItemsQuantity() {
-		let items = this.props.shoppingCartItems;
+	addItem(item){
 
-		let parsedItems = this.state.parsedItems;
+		//const newItems = this.state.parsedItems.concat(item);
+		//this.setState({ parsedItems: newItems })
+		
+		this.setState({ parsedItems: [...this.state.parsedItems, item] })
+	}
+
+	componentWillMount() {
+		//this.parseItemsQuantity();
+		console.log("componentWillMount running!");
+
+		//console.log("this.state.parsedItems:" + this.state.parsedItems.length)
+	}
+
+	parseItemsQuantity() {
+		// items from the original shoppin cart
+		const items = this.props.shoppingCartItems;
+
+		const parsedItems = this.state.parsedItems;
 
 		items.forEach(item => {
-			item.quantity = 1;
+			item.quantity = 0;
 		})
-		// let control = 
 
-		items.map(item => {
+		items.forEach( item => {
+			
 			if( parsedItems.length === 0 ) {
-				parsedItems.push(item);
-				// parsedItems.quantity = 0;
+			
+				item.quantity = 1;
+
+				 //parsedItems.push(item);
+
+				//[...this.state.shoppingCartItems, item]
+				//this.setState({ parsedItems: [...this.state.parsedItems, item] });
+
+				this.addItem(item);
 
 				console.log("parsedItems Array empty, pusching first obj")
 			} else {
 				if( this.alreadyAdded(item.id) ) {
 				// parsedItems.quantity += 1;
-				this.increateItemQuantity(item.id)
+				//item.quantity += 1;
+				this.increateItemQuantity(item.id);
+				this.addItem(item);
+
 				console.log("obj already added, increasing its quantity")
-			} else {
-				parsedItems.push(item);
+			} else if( !this.alreadyAdded(item.id) ) {
+				//parsedItems.push(item);
+				item.quantity = 1;
+
+				this.addItem(item);
+
 				console.log("obj not in array, pushing it..")
 			}
 
 			}
 
 			
-
 		}); //end of map
-
-		// this.setState({
-		// 	parsedItems: parsedItems
-		// });
 
 	}
 
@@ -100,9 +141,9 @@ class CheckOut extends Component {
 
 
 	showItems() {
-		// this.parseItemsQuantity();
-		// let items = this.props.shoppingCartItems;
-		let items = this.state.parsedItems;
+		//const items = this.state.parsedItems;
+		const items = this.props.shoppingCartItems;
+		//console.log("this.state.parsedItems size: ", items.length)
 
 		// let updatedItems = 
 
@@ -112,7 +153,7 @@ class CheckOut extends Component {
 					<ul>
 						<li>{ item.name }</li>
 						<li>Price: ${ item.price }</li>
-						<li>Quantity: {item.quantity} </li>
+						{/*<li>Quantity: {item.quantity} </li>*/}
 					</ul>
 					<img className = "image-checking-out" src = { item.image } alt="hahaha" />
 					<div className="remove-item">
@@ -122,6 +163,26 @@ class CheckOut extends Component {
 			)
 		})
 	}
+
+	showTotal() {
+		const items = this.props.shoppingCartItems;
+
+		let total = 0;
+
+		items.forEach(item => {
+			total += item.price;
+		});
+
+		console.log(`total is ${total}`);
+
+		return (
+			<h3>Your total is: ${total} </h3>
+		);
+
+
+
+
+	}// end of showTotal
 
 	showForm() {
 		return (
@@ -145,10 +206,12 @@ class CheckOut extends Component {
 				<button className="back-to-shopping" onClick={ () => { this.props.getMode("buying") }} >Back to shopping</button>
 
 				<div className="current-items">
-					{ this.parseItemsQuantity() }
+					{/* this.parseItemsQuantity()*/ }
 					{ this.showItems() }
+				</div>
 
-					
+				<div className="total">
+					{ this.showTotal() }
 				</div>
 
 				<button onClick={ () => { this.placeOrder() } } className="place-order-button">Place Order</button>

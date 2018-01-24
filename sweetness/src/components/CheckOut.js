@@ -182,16 +182,32 @@ class CheckOut extends Component {
 
 	}// end of showTotal
 
+	handleSubmit(event) {
+		event.preventDefault();
+
+		const target = event.target;
+
+		const name = target.name.value;
+		const cellNumber = target.cellNumber.value;
+		const address = target.address.value;
+		const textarea = target.textarea.value;
+
+		console.log("Name is: " + name);
+		console.log("cellNumber is: " + cellNumber);
+		console.log("Address is: " + address);
+		console.log("Message is: " + textarea);
+	}
+
 	showForm() {
 		return (
-		 	<form id="form" className="topBefore">
+		 	<form id="form" className="topBefore" onSubmit={ this.handleSubmit.bind(this) } >
 		
-				<input id="name" type="text" placeholder="Name" />
+				<input id="name" type="text" placeholder="Name" name="name" />
 			 	{/*<input id="email" type="text" placeholder="E-mail" />*/}
-			 	<input id="cell-number" type="text" placeholder="Cell Number" />
-			 	<input id="Address" type="text" placeholder="Address" />
-			 	<textarea id="message" type="text" placeholder="MESSAGE"></textarea> 
-	  			{/*<input id="submit" type="submit" value="GO!" />*/}
+			 	<input id="cell-number" type="text" placeholder="Cell Number" name="cellNumber" />
+			 	<input id="Address" type="text" placeholder="Address" name="address" />
+			 	<textarea id="message" type="text" placeholder="MESSAGE" name="textarea" ></textarea> 
+	  			<input id="submit" type="submit" value="GO!" />
   
 			</form>
 		)

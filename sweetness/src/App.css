@@ -97,7 +97,8 @@ html, body, p {
 }
 
 .back-to-shopping:hover {
-  background-color: #134074;
+  color: white;
+  /*background-color: #134074;*/
 }
 
 .current-items {
@@ -234,7 +235,7 @@ input {
 }
 
 input:hover {
-  background: #011627;
+  background: #EDF2F4;
   color: #e2dedb;
 }
 
@@ -263,7 +264,7 @@ textarea {
 }
 
 textarea:hover {
-  background: #b3aca7;
+  background: #EDF2F4;
   color: #e2dedb;
 }
 
@@ -608,6 +609,57 @@ textarea:hover {
   ***************************************/
   .single-product {
     width: 45%;
+  }
+
+  /**************************************
+  ************* CHECK OUT  ************
+  ***************************************/
+
+  .checkout-section {
+    width: 100vw;
+  }
+
+  .back-to-shopping {
+    height: 4vh;
+    font-size: 14px;
+  }
+
+  .current-items {
+    width: 100vw;
+    /*background-color: tomato;*/
+    display: inline-block;
+  }
+
+  .image-checking-out {
+    width: 30%;
+  }
+
+  .left-info h2 {
+    font-size: 18px;
+  }
+
+  .left-info h1 {
+    font-size: 25px;
+  }
+
+  .message-area {
+    width: 100vw;
+    /*background-color: black;*/
+    position: static;
+  }
+
+  .payment-section {
+    width: 100vw;
+    text-align: center;
+    background-color: #8D99AE;
+  }
+
+  .total {
+    width: 100vw;
+  }
+
+  .place-order-button {
+    width: 100vw;
   }
 
 

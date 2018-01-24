@@ -102,7 +102,6 @@ class App extends Component {
 			        	addItemToCart = { this.addItemToCart.bind(this) } 
 			        	currentProduct = { this.state.currentProduct } 
 			        />
-// 
 			        <Sidebar 
 			        	products = { this.state.products } 
 			         	

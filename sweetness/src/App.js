@@ -15,7 +15,7 @@ class App extends Component {
 
 		this.state = {
 			mode: "buying",
-			// url: "http://localhost:8080/",
+			 //url: "http://localhost:8080/",
 			url: "https://quiet-thicket-12667.herokuapp.com/",
 			products: [],
 			currentProduct: [],
@@ -35,8 +35,9 @@ class App extends Component {
 			console.log(responseJson)
 
 			this.setState({
-				products: responseJson,
-				currentProduct: responseJson[0]
+				// products: responseJson,
+				products: responseJson
+				// currentProduct: responseJson[0],
 				// shoppingCartItems: responseJson
 			});
 		})
@@ -101,10 +102,12 @@ class App extends Component {
 			        	addItemToCart = { this.addItemToCart.bind(this) } 
 			        	currentProduct = { this.state.currentProduct } 
 			        />
-
+// 
 			        <Sidebar 
-			        	products = { this.state.products} 
-			         	getCurrentProduct =	{ this.getCurrentProduct.bind(this) } 
+			        	products = { this.state.products } 
+			         	
+			        	addItemToCart = { this.addItemToCart.bind(this) } 
+
 			         />
 			     
 			     	<Footer />

@@ -8,15 +8,14 @@ class Sidebar extends Component {
 
 		return products.map((product, index) => {
 			return (
-				<div className = "single-product" key = { index } 
-						onClick = { () => { this.props.getCurrentProduct(product) } }
-				>
+				<div className = "single-product" key = { index } >
 					<ul>
 						<li> <img className = "image" src = { product.image } alt="hahaha" /> </li>
-						<li> { product.name } </li>
-						<li> ${ product.price } </li>
+						<li className = "product-name" > { product.name } </li>
+						<li className = "product-description"> { product.description} </li>
+						<li className = "product-price"> ${ product.price } </li>
 					</ul>
-					{/*<button className="add-to-cart-button">Add to Cart</button>*/}
+					<button className="add-to-cart-button" onClick = { () => { this.props.addItemToCart(product) } }>Add to Cart</button>
 				</div>
 			)
 		})

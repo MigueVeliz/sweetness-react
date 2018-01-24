@@ -150,15 +150,13 @@ class CheckOut extends Component {
 		return items.map( (item, index) => {
 			return (
 				<div className="items-to-be-bought" key={index}>
-					<ul>
-						<li>{ item.name }</li>
-						<li>Price: ${ item.price }</li>
-						{/*<li>Quantity: {item.quantity} </li>*/}
-					</ul>
-					<img className = "image-checking-out" src = { item.image } alt="hahaha" />
-					<div className="remove-item">
-						<button onClick={ () => { this.removeItem(item.id) } }>x</button>
+					<div className = "left-info" >
+						<img className = "image-checking-out" src = { item.image } alt="hahaha" />
+						<h2> { item.name } </h2>
+						<h1> ${ item.price }</h1>
 					</div>
+
+
 				</div>
 			)
 		})
@@ -186,14 +184,14 @@ class CheckOut extends Component {
 
 	showForm() {
 		return (
-		  <form id="form" className="topBefore">
+		 	<form id="form" className="topBefore">
 		
-			<input id="name" type="text" placeholder="Name" />
-		 	<input id="email" type="text" placeholder="E-mail" />
-		 	<input id="cell-number" type="text" placeholder="Cell Number" />
-		 	<input id="Address" type="text" placeholder="Address" />
-		 	{/*<textarea id="message" type="text" placeholder="MESSAGE"></textarea>*/}
-  			<input id="submit" type="submit" value="GO!" />
+				<input id="name" type="text" placeholder="Name" />
+			 	{/*<input id="email" type="text" placeholder="E-mail" />*/}
+			 	<input id="cell-number" type="text" placeholder="Cell Number" />
+			 	<input id="Address" type="text" placeholder="Address" />
+			 	<textarea id="message" type="text" placeholder="MESSAGE"></textarea> 
+	  			{/*<input id="submit" type="submit" value="GO!" />*/}
   
 			</form>
 		)
@@ -210,16 +208,22 @@ class CheckOut extends Component {
 					{ this.showItems() }
 				</div>
 
+				<div className="message-area">
+					{ this.showForm() }
+
+				</div>
+
+				<div className="payment-section">
+					
+					<h2>Payment Information</h2>
+				</div>
+
 				<div className="total">
 					{ this.showTotal() }
 				</div>
 
 				<button onClick={ () => { this.placeOrder() } } className="place-order-button">Place Order</button>
-				
 
-				<div className="payment-section">
-					{ this.showForm() }
-				</div>
 			</div>
 		);
 	}

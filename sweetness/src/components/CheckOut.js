@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import Checkout from "../Checkout";
+
 class CheckOut extends Component {
 
 	constructor() {
@@ -204,10 +206,10 @@ class CheckOut extends Component {
 		
 				<input id="name" type="text" placeholder="Name" name="name" />
 			 	{/*<input id="email" type="text" placeholder="E-mail" />*/}
-			 	<input id="cell-number" type="text" placeholder="Cell Number" name="cellNumber" />
+			 	<input id="cell-number" type="number" placeholder="Cell Number" name="cellNumber" />
 			 	<input id="Address" type="text" placeholder="Address" name="address" />
 			 	<textarea id="message" type="text" placeholder="MESSAGE" name="textarea" ></textarea> 
-	  			<input id="submit" type="submit" value="GO!" />
+	  			<input className="place-order-button" id="submit" type="submit" value="GO!" />
   
 			</form>
 		)
@@ -237,6 +239,12 @@ class CheckOut extends Component {
 				<div className="total">
 					{ this.showTotal() }
 				</div>
+
+				<Checkout 
+					name={'I am going to be a Billonaire'}
+					description={'Muchos chavos'}
+					amount={1}
+				/>
 
 				<button onClick={ () => { this.placeOrder() } } className="place-order-button">Place Order</button>
 

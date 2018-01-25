@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './App.css';
 
@@ -8,6 +9,8 @@ import Footer from './components/Footer';
 import CheckOut from './components/CheckOut';
 import LogIn from './components/LogIn';
 
+require('dotenv').config();
+
 class App extends Component {
 
 	constructor() {
@@ -15,7 +18,7 @@ class App extends Component {
 
 		this.state = {
 			mode: "buying",
-			 //url: "http://localhost:8080/",
+			// url: "http://localhost:8080/",
 			url: "https://quiet-thicket-12667.herokuapp.com/",
 			products: [],
 			currentProduct: [],
@@ -89,6 +92,8 @@ class App extends Component {
 		let mode = this.state.mode;
 
 		console.log("---mode---: " + mode)
+  		console.log('env.NODE_ENV: ' + process.env.NODE_ENV);
+
 
 		if(mode === "buying") {
 			return (
